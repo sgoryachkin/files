@@ -17,6 +17,7 @@ function FindProxyForURL(url, host) {
         // Swagger & Smartbear
         "swagger.io",
         "smartbear.co",
+        "imagedelivery.net",
 
         // JetBrains
         "jetbrains.com",
