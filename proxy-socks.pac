@@ -3,15 +3,25 @@ function FindProxyForURL(url, host) {
     var DIRECT = "DIRECT";
 
     // Простая проверка по домену
-    if (dnsDomainIs(host, "youtube.com") ||
-        dnsDomainIs(host, "googlevideo.com") ||
-        dnsDomainIs(host, "youtu.be") ||
-        dnsDomainIs(host, "facebook.com") ||
-        dnsDomainIs(host, "ytimg.com") ||
-	    dnsDomainIs(host, "swagger.io") ||
-        dnsDomainIs(host, "jetbrains.com") ||
-        dnsDomainIs(host, "instagram.com") ||
-        dnsDomainIs(host, "jb.gg")) {
+   
+    if (
+        	// Youtube
+        	dnsDomainIs(host, "youtube.com") ||
+        	dnsDomainIs(host, "googlevideo.com") ||
+        	dnsDomainIs(host, "youtu.be") ||
+        	dnsDomainIs(host, "ytimg.com") ||
+
+        	// Facebook
+        	dnsDomainIs(host, "facebook.com") ||
+        
+        	// Swagger
+	    	dnsDomainIs(host, "swagger.io") ||
+	    	dnsDomainIs(host, "smartbear.co") ||
+
+        	dnsDomainIs(host, "jetbrains.com") ||
+        	dnsDomainIs(host, "jb.gg") ||
+        	dnsDomainIs(host, "instagram.com") 
+    	) {
         return PROXY;
     }
 
