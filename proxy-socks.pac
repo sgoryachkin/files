@@ -11,6 +11,7 @@ function FindProxyForURL(url, host) {
 
         // Facebook & Instagram
         "facebook.com",
+        "fbcdn.net",
         "instagram.com",
         
         // Swagger & Smartbear
