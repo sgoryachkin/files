@@ -18,10 +18,14 @@ function FindProxyForURL(url, host) {
         "swagger.io",
         "smartbear.co",
         "imagedelivery.net",
+        "convertexperiments.com",
 
         // JetBrains
         "jetbrains.com",
-        "jb.gg" 
+        "jb.gg",
+
+        // Autodesk
+        "autodesk.com"
     ];
 
     for (var i = 0; i < proxyDomains.length; i++) {
