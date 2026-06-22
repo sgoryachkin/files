@@ -26,8 +26,7 @@ function FindProxyForURL(url, host) {
         "jb.gg",
 
         // Cloudflare customer video
-
-"customer-fttymkkotgfi8ra3.cloudflarestream.com",
+        "customer-fttymkkotgfi8ra3.cloudflarestream.com",
 
         // Autodesk
         "autodesk.com"
