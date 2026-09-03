@@ -2,42 +2,42 @@ function FindProxyForURL(url, host) {
     var PROXY = "SOCKS5 127.0.0.1:1080";
     var DIRECT = "DIRECT";
 
-    var proxyDomains = [
+    if (
         // Youtube
-        "youtube.com",
-        "googlevideo.com",
-        "youtu.be",
-        "ytimg.com",
+        dnsDomainIs(host, "youtube.com") ||
+        dnsDomainIs(host, "googlevideo.com") ||
+        dnsDomainIs(host, "youtu.be") ||
+        dnsDomainIs(host, "ytimg.com") ||
 
-        // Facebook & Instagram
-        "facebook.com",
-        "fbcdn.net",
-        "instagram.com",
-        
-        // Swagger & Smartbear
-        "swagger.io",
-        "smartbear.co",
-        "smartbear.com",
-        "imagedelivery.net",
-        "convertexperiments.com",
+        // Facebook
+        dnsDomainIs(host, "facebook.com") ||
+        dnsDomainIs(host, "fbcdn.net") ||
+
+        // Instagram
+        dnsDomainIs(host, "instagram.com") ||
+
+        // LinkedIn
+        dnsDomainIs(host, "linkedin.com") ||
+
+        // Swagger.io
+        dnsDomainIs(host, "swagger.io") ||
+        dnsDomainIs(host, "smartbear.co") ||
+        dnsDomainIs(host, "smartbear.com") ||
+        dnsDomainIs(host, "imagedelivery.net") ||
+        dnsDomainIs(host, "convertexperiments.com") ||
 
         // JetBrains
-        "jetbrains.com",
-        "jb.gg",
+        dnsDomainIs(host, "jetbrains.com") ||
+        dnsDomainIs(host, "jb.gg") ||
 
-        // Cloudflare customer video
-        "customer-fttymkkotgfi8ra3.cloudflarestream.com",
+        // Видео cloudflarestream пользователя fttymkkotgfi8ra3 (Видеоуроки 3D)
+        dnsDomainIs(host, "customer-fttymkkotgfi8ra3.cloudflarestream.com") ||
 
         // Autodesk
-        "autodesk.com"
-    ];
-
-    for (var i = 0; i < proxyDomains.length; i++) {
-        if (dnsDomainIs(host, proxyDomains[i])) {
-            return PROXY;
-        }
+        dnsDomainIs(host, "autodesk.com")
+    ) {
+        return PROXY;
     }
 
     return DIRECT;
 }
-
